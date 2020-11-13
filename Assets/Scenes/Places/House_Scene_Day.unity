@@ -337,7 +337,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 39808354a07e72d4bbd54077be21916d, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -1449,7 +1449,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 83f29738b91fc544783d395c61c4d24c, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -1518,9 +1518,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _window: {fileID: 1545073683}
-  _changeColor:
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 0.8, g: 0.8, b: 0.8, a: 1}
+  _changeSprite:
+  - {fileID: 21300000, guid: 54c9dc94fd0af794ea0fe78ed0738944, type: 3}
+  - {fileID: 21300000, guid: 9dd0058b830613446863e1b880f23008, type: 3}
 --- !u!61 &1258491854
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1545,7 +1545,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 325, y: 100}
+  m_Size: {x: 325, y: 150}
   m_EdgeRadius: 0
 --- !u!114 &1258491855
 MonoBehaviour:
@@ -1875,9 +1875,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: bcd0c935e49fcf44f8c1097a935d6318, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 08c52990c67ff174bb9f9e1717353c4e, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -2041,9 +2041,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _window: {fileID: 1437100243}
-  _changeColor:
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 0.8, g: 0.8, b: 0.8, a: 1}
+  _changeSprite:
+  - {fileID: 21300000, guid: 6d7a221960d218643be633960a234b04, type: 3}
+  - {fileID: 21300000, guid: c4a08e84dc4f15e4a8be0cf0ac85570a, type: 3}
 --- !u!61 &1463679137
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2676,6 +2676,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acf36f29bd284c441bb25fb94eb462d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _needTuto: 0
   _dayNight: 0
   _partyWindow: {fileID: 0}
   _fade: {fileID: 0}

@@ -33,4 +33,9 @@ public class Tutorial : MonoBehaviour
         GameObject fade = Instantiate(_fade, transform.parent);
         fade.GetComponent<FadeController>()._sceneName = _sceneName;
     }
+    public void SkipTuto()
+    {
+        CancelInvoke();
+        ChangeScene();
+    }
 }

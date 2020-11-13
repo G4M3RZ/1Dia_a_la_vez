@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class AnimController : MonoBehaviour
 {
-    /*[HideInInspector]*/ public int _clothNum;
+    [HideInInspector] public int _clothNum;
     private Animator _anim;
     public string _animName;
     public float _fAnimTime;
@@ -22,6 +22,7 @@ public class AnimController : MonoBehaviour
         if (SceneManager.GetActiveScene().name == "House_Scene_Day")
         {
             _clothNum = 0;
+            PlayerPrefs.SetInt("Cloth", 0);
             _paht.enabled =_moves.enabled = false;
             StartCoroutine(FirstAnim());
         }

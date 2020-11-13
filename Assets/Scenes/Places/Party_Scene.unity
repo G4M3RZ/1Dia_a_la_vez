@@ -661,7 +661,7 @@ PrefabInstance:
     - target: {fileID: 2467498925071198626, guid: eb2a92d425df0104496eda8f50874a54,
         type: 3}
       propertyPath: _deadScene
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2467498925071198626, guid: eb2a92d425df0104496eda8f50874a54,
         type: 3}

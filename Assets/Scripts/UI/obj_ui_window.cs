@@ -7,7 +7,7 @@ public class obj_ui_window : MonoBehaviour
 {
     private Image _image;
     public GameObject _window;
-    public List<Color> _changeColor;
+    public List<Sprite> _changeSprite;
 
     private AIPath _path;
     private movement _movement;
@@ -16,7 +16,7 @@ public class obj_ui_window : MonoBehaviour
     private void Awake()
     {
         _image = GetComponent<Image>();
-        _image.color = _changeColor[0];
+        _image.sprite = _changeSprite[0];
 
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         _movement = player.GetComponent<movement>();
@@ -42,7 +42,7 @@ public class obj_ui_window : MonoBehaviour
     {
         if (collision.CompareTag("Player") && _window != null)
         {
-            _image.color = _changeColor[1];
+            _image.sprite = _changeSprite[1];
             _UI = true;
         }
     }
@@ -50,7 +50,7 @@ public class obj_ui_window : MonoBehaviour
     {
         if (collision.CompareTag("Player") && _window != null)
         {
-            _image.color = _changeColor[0];
+            _image.sprite = _changeSprite[0];
             _UI = false;
         }
     }
