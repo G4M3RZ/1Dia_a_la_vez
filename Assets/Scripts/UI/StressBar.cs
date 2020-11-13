@@ -3,6 +3,10 @@ using UnityEngine.UI;
 
 public class StressBar : MonoBehaviour
 {
+    public GameObject _fade;
+
+    [Range(0, 10)]
+    public int _barValue;
     public int _deadScene;
     private Transform _bar;
     private float _barProgress;
@@ -14,10 +18,10 @@ public class StressBar : MonoBehaviour
     {
         _bar = transform.GetChild(0);
         _barImage = _bar.GetComponent<Image>();
-        _barProgress = PlayerPrefs.GetFloat("StressBar", 1);
+        _barProgress = PlayerPrefs.GetFloat("StressBar", _barValue);
 
         size = _bar.localScale;
-        size.x = _barProgress;
+        size.x = _barProgress / _barValue;
         _bar.localScale = size;
     }
     private void Update()
@@ -28,24 +32,24 @@ public class StressBar : MonoBehaviour
             SetStressBar(_barProgress + 0.1f, Color.green);
 
         size = _bar.localScale;
-        if (size.x != _barProgress)
+        if (size.x != _barProgress / _barValue || _barImage.color != Color.white)
         {
             _barImage.color = Color.Lerp(_barImage.color, Color.white, Time.deltaTime * 5);
-            size.x = Mathf.Lerp(size.x, _barProgress, Time.deltaTime * 5);
+            size.x = Mathf.Lerp(size.x, _barProgress / _barValue, Time.deltaTime * 5);
             _bar.localScale = size;
         }
 
         if(_barProgress == 0)
         {
-            Debug.Log("Perdiste");
             PlayerPrefs.SetInt("Dead", _deadScene);
-            //cambiar a escena de perder
+            GameObject fade = Instantiate(_fade, transform.parent);
+            fade.GetComponent<FadeController>()._sceneName = "Lose_Scene";
             this.enabled = false;
         }
     }
     public void SetStressBar(float value, Color color)
     {
-        _barProgress = Mathf.Clamp(_barProgress - value, 0, 1);
+        _barProgress = Mathf.Clamp(_barProgress + value, 0, _barValue);
         _barImage.color = color;
         PlayerPrefs.SetFloat("StressBar", _barProgress);
         PlayerPrefs.Save();

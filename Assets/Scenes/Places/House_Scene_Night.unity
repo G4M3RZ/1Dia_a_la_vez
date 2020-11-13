@@ -1211,6 +1211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acf36f29bd284c441bb25fb94eb462d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _needTuto: 1
   _dayNight: 1
   _partyWindow: {fileID: 39663622}
   _fade: {fileID: 1172880913802820277, guid: c367a29ea8593864c9aaddafda5f56c1, type: 3}

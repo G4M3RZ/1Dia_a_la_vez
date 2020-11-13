@@ -133,7 +133,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e2ef6a8164e9514eb92877bf75fe3ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _heightLight: {r: 1, g: 0.059340812, b: 0, a: 1}
+  _fade: {fileID: 1172880913802820277, guid: c367a29ea8593864c9aaddafda5f56c1, type: 3}
+  _deadScene: 0
 --- !u!1 &2467498925294728996
 GameObject:
   m_ObjectHideFlags: 0

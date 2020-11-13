@@ -5,6 +5,8 @@ using UnityEngine;
 public class SittingController : MonoBehaviour
 {
     public Transform _player;
+    public StressBar _bar;
+    public float _hurt, _health;
     [Range(0, 3)] public float _changeTime, _qteTime;
     
     public Sprite _icon, _null;
@@ -12,6 +14,7 @@ public class SittingController : MonoBehaviour
     public List<SitPlace> _sits;
     private int _currentSit;
 
+    public bool _needTuto;
     public GameObject _fade;
     public string _sceneName;
 
@@ -46,11 +49,20 @@ public class SittingController : MonoBehaviour
             SitIcon(_null);
 
             if (_sits[_currentSit]._enemyIsHere)
-                Debug.Log("hace daño");
+                _bar.SetStressBar(-_hurt, Color.red);
+            else
+                _bar.SetStressBar(_health, Color.green);
         }
 
-        GameObject fade = Instantiate(_fade, transform.parent);
-        fade.GetComponent<FadeController>()._sceneName = _sceneName;
+        if (_needTuto)
+        {
+            PlayerPrefs.SetString("Scene", _sceneName);
+            PlayerPrefs.Save();
+            ChangeScene("Tutorial");
+        }
+        else
+            ChangeScene(_sceneName);
+        
     }
     IEnumerator QuickTimeEvent()
     {
@@ -86,6 +98,11 @@ public class SittingController : MonoBehaviour
             }
         } 
         while (e < random);
+    }
+    void ChangeScene(string sceneName)
+    {
+        GameObject fade = Instantiate(_fade, transform.parent);
+        fade.GetComponent<FadeController>()._sceneName = sceneName;
     }
     public void SitSelect(int numSit)
     {

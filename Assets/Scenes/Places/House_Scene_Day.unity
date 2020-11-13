@@ -1844,6 +1844,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ee12a8e07658234e83b5a5a00d86259, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _needTuto: 1
   _parent: {fileID: 1920783552}
   _fadePrefab: {fileID: 1172880913802820277, guid: c367a29ea8593864c9aaddafda5f56c1,
     type: 3}
@@ -2067,7 +2068,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 115, y: 185}
+  m_Size: {x: 170, y: 315}
   m_EdgeRadius: 0
 --- !u!114 &1463679138
 MonoBehaviour:
@@ -2942,6 +2943,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Stress_Bar_Prefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 2467498925071198626, guid: eb2a92d425df0104496eda8f50874a54,
+        type: 3}
+      propertyPath: _barValue
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2467498925071198627, guid: eb2a92d425df0104496eda8f50874a54,
         type: 3}

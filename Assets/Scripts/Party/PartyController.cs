@@ -5,6 +5,8 @@ public class PartyController : MonoBehaviour
 {
     public GameObject _qteButton;
     public Camera _cam;
+    public StressBar _bar;
+    public float _hurt, health;
 
     [Range(0, 2)] public float _qteTimer;
     [Range(1, 10)] public float _eventDelay;
@@ -39,14 +41,13 @@ public class PartyController : MonoBehaviour
 
             if (_clock._startTimer)
             {
-                //animacion de tomar?
                 _active = false;
                 _qte = true;
                 StartCoroutine(QTE_Event());
             }
         }
 
-        GameObject fade = Instantiate(_fade, transform.parent);
+        GameObject fade = Instantiate(_fade, transform);
         fade.GetComponent<FadeController>()._sceneName = _sceneName;
     }
     IEnumerator QTE_Event()
@@ -60,14 +61,14 @@ public class PartyController : MonoBehaviour
         
         yield return new WaitForSeconds(_qteTimer);
 
-        if (_active) StopCoroutine(QTE_Event()); else Debug.Log("Hurt Herself"); //bajar barra
+        if (_active) StopCoroutine(QTE_Event()); else _bar.SetStressBar(-_hurt, Color.red);
 
         _qte = false;
         _qteButton.SetActive(false);
     }
     public void QTEButton()
     {
-        Debug.Log("Succesful Drink");
+        _bar.SetStressBar(health, Color.green);
 
         _active = true;
         _qte = false;

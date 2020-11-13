@@ -7,6 +7,7 @@ using System.Collections;
 
 public class DayNight : MonoBehaviour
 {
+    public bool _needTuto;
     [Range(0,1)] public int _dayNight;
     public GameObject _partyWindow, _fade;
     public TextMeshProUGUI _dayText;
@@ -38,27 +39,45 @@ public class DayNight : MonoBehaviour
     {
         _partyWindow.SetActive(false);
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.5f);
 
         int random = Random.Range(0, 2);
 
         if (random == 0 && _party == 0)
             _partyWindow.SetActive(true);
         else
-            NoGoToParty("House_Scene_Day");
+        {
+            if (dayCount < 5)
+                NoGoToParty("House_Scene_Day");
+            else
+            {
+                PlayerPrefs.SetInt("Dead", 0);
+                NoGoToParty("Lose_Scene");
+            }
+        }
     }
     public void GoToParty(string sceneName)
     {
-        GameObject fade = Instantiate(_fade, transform);
-        fade.GetComponent<FadeController>()._sceneName = sceneName;
         PlayerPrefs.SetInt("Party", 1);
+
+        if (_needTuto)
+        {
+            PlayerPrefs.SetString("Scene", sceneName);
+            ChangeScene("Tutorial");
+        }
+        else
+            ChangeScene(sceneName);
     }
     public void NoGoToParty(string sceneName)
     {
-        GameObject fade = Instantiate(_fade, transform);
-        fade.GetComponent<FadeController>()._sceneName = sceneName;
+        ChangeScene(sceneName);
         PlayerPrefs.SetInt("DayCount", dayCount + 1);
         PlayerPrefs.SetInt("Party", 0);
+    }
+    void ChangeScene(string sceneName)
+    {
+        GameObject fade = Instantiate(_fade, transform);
+        fade.GetComponent<FadeController>()._sceneName = sceneName;
     }
     private void Update() //test only
     {

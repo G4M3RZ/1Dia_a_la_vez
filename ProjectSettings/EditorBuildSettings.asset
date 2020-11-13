@@ -6,33 +6,30 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/00_Game_Menu.unity
+    path: Assets/Scenes/UI/00_Game_Menu.unity
     guid: b43f933be6599f64ea66f17c04da1dcb
   - enabled: 1
-    path: Assets/Scenes/House_Scene_Day.unity
-    guid: c12f5c58b155fcd47897161d0af33260
-  - enabled: 0
-    path: Assets/Scenes/Street_Scene_Day.unity
-    guid: c56c964a3e6ec284ba32fd58fbb081a1
+    path: Assets/Scenes/UI/Tutorial.unity
+    guid: 337325adb4faf72439a815f87d761d40
   - enabled: 1
-    path: Assets/Scenes/Bus_Scene_Day.unity
+    path: Assets/Scenes/Places/House_Scene_Day.unity
+    guid: c12f5c58b155fcd47897161d0af33260
+  - enabled: 1
+    path: Assets/Scenes/Places/Bus_Scene_Day.unity
     guid: 20dce845fc84f6845b4505ffa2fdcc70
   - enabled: 1
-    path: Assets/Scenes/Office_Scene.unity
+    path: Assets/Scenes/Places/Office_Scene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 0
-    path: Assets/Scenes/Street_Scene_Night.unity
-    guid: 3d2db49de7cf4b944940d1f20d4f54cb
   - enabled: 1
-    path: Assets/Scenes/Bus_Scene_Night.unity
+    path: Assets/Scenes/Places/Bus_Scene_Night.unity
     guid: e26a564cc07977540913a81dacfb4a02
   - enabled: 1
-    path: Assets/Scenes/House_Scene_Night.unity
+    path: Assets/Scenes/Places/House_Scene_Night.unity
     guid: 252a507a75e5345468a22531ecb8d7a8
   - enabled: 1
-    path: Assets/Scenes/Party_Scene.unity
+    path: Assets/Scenes/Places/Party_Scene.unity
     guid: 7df3fcfcb41e1a34e8fe79d20642948a
   - enabled: 1
-    path: Assets/Scenes/Lose_Scene.unity
+    path: Assets/Scenes/UI/Lose_Scene.unity
     guid: 5cbefaa990237834eadea158e551a79c
   m_configObjects: {}

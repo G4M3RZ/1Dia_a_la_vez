@@ -5,10 +5,13 @@ public class Office_hiding_place : MonoBehaviour
 {
     public GameObject _qteButton;
     public Animator _boss, _player;
+    public StressBar _bar;
+    public float _hurt, _health;
 
     [Range(0, 2)] public float _qteTimer;
     [Range(1,10)] public float _eventDelay;
 
+    public bool _needTuto;
     public GameObject _fade;
     public string _sceneName;
 
@@ -42,8 +45,20 @@ public class Office_hiding_place : MonoBehaviour
         }
 
         PlayerPrefs.SetInt("DayNight", 1);
+
+        if (_needTuto)
+        {
+            PlayerPrefs.SetString("Scene", _sceneName);
+            PlayerPrefs.Save();
+            ChangeScene("Tutorial");
+        }
+        else
+            ChangeScene(_sceneName);
+    }
+    void ChangeScene(string sceneName)
+    {
         GameObject fade = Instantiate(_fade, transform.parent);
-        fade.GetComponent<FadeController>()._sceneName = _sceneName;
+        fade.GetComponent<FadeController>()._sceneName = sceneName;
     }
     IEnumerator QTE_Event()
     {
@@ -54,7 +69,7 @@ public class Office_hiding_place : MonoBehaviour
         if (_active) StopCoroutine(QTE_Event());
         else
         {
-            Debug.Log("Hurt Herself"); //bajar barra
+            _bar.SetStressBar(-_hurt, Color.red);
             _player.Play("Ui_Iddle_00");
         }
 
@@ -63,7 +78,7 @@ public class Office_hiding_place : MonoBehaviour
     }
     public void QTEButton(AnimationClip animName)
     {
-        Debug.Log("Succesful Hiding"); //subir barra
+        _bar.SetStressBar(_health, Color.green);
         _player.Play(animName.name);
 
         _active = true;
