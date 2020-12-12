@@ -322,7 +322,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: c3d4f7cf27aa93942bdb3d8d7ac97462, type: 3}
   m_Type: 3
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -396,8 +396,8 @@ MonoBehaviour:
   _bar: {fileID: 59435040}
   _hurt: 1
   _health: 0.5
-  _changeTime: 3
-  _qteTime: 1
+  _changeTime: 2.8
+  _qteTime: 1.8
   _icon: {fileID: 21300000, guid: 6885e336b59a5a449b269ae3293367d4, type: 3}
   _null: {fileID: 21300000, guid: 274291ea1f6e1914fae2032ac71aa640, type: 3}
   _enemys:
@@ -2093,7 +2093,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _waitClock: 0
   _clock: {fileID: 62863190}
-  _timeGame: 35
+  _timeGame: 20
   _startTimer: 0
 --- !u!114 &1563580638
 MonoBehaviour:
@@ -2109,13 +2109,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _bar: {fileID: 59435040}
   _clothDamage:
-  - -2
-  - -0.5
-  - 2
-  - -2
-  - 0.5
-  - -0.5
+  - -1
+  - -0.25
   - 1
+  - -1
+  - 0.25
+  - -0.25
+  - 0.5
 --- !u!1 &1568246039
 GameObject:
   m_ObjectHideFlags: 0

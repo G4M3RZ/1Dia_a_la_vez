@@ -626,7 +626,7 @@ MonoBehaviour:
   _bar: {fileID: 902875350}
   _hurt: 1
   health: 0.5
-  _qteTimer: 0.6
+  _qteTimer: 1.2
   _eventDelay: 3
   _fade: {fileID: 1172880913802820277, guid: c367a29ea8593864c9aaddafda5f56c1, type: 3}
   _sceneName: House_Scene_Night
@@ -644,7 +644,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _waitClock: 1
   _clock: {fileID: 1686024008}
-  _timeGame: 40
+  _timeGame: 27
   _startTimer: 0
 --- !u!1001 &1449274841
 PrefabInstance:
@@ -820,7 +820,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: c3d4f7cf27aa93942bdb3d8d7ac97462, type: 3}
   m_Type: 3
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -873,7 +873,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1733467549
 RectTransform:
   m_ObjectHideFlags: 0
@@ -888,10 +888,10 @@ RectTransform:
   m_Father: {fileID: 909246080}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -999, y: -358}
+  m_SizeDelta: {x: 180, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1733467550
 MonoBehaviour:

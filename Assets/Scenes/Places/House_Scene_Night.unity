@@ -1218,7 +1218,7 @@ MonoBehaviour:
   _dayText: {fileID: 0}
   _dayNightColors:
   - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 0.13499998, g: 0.19874991, b: 0.9, a: 1}
+  - {r: 0.27450982, g: 0.31764707, b: 0.8392157, a: 1}
   _sprites: []
   _images:
   - {fileID: 1286706253}

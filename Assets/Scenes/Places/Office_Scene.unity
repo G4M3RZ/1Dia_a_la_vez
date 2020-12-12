@@ -157,7 +157,7 @@ MonoBehaviour:
   _bar: {fileID: 175479902}
   _hurt: 1
   _health: 0.5
-  _qteTimer: 0.7
+  _qteTimer: 1.2
   _eventDelay: 4
   _needTuto: 1
   _fade: {fileID: 1172880913802820277, guid: c367a29ea8593864c9aaddafda5f56c1, type: 3}
@@ -190,7 +190,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _waitClock: 1
   _clock: {fileID: 554713572}
-  _timeGame: 40
+  _timeGame: 27
   _startTimer: 0
 --- !u!1 &129968817
 GameObject:
@@ -733,13 +733,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _bar: {fileID: 175479902}
   _clothDamage:
-  - -2
-  - 0.5
-  - 3
-  - -2
+  - -1
+  - 0.25
+  - 1.5
   - -1
   - -0.5
-  - 1
+  - -0.25
+  - 0.5
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
